@@ -1,0 +1,45 @@
+# Nmap 7.99 scan initiated Wed Sep 16 02:41:04 2026 as: /usr/lib/nmap/nmap --privileged --script vuln -p 22,80,111,56816 -oN /home/kali/vuln_scan.txt 192.168.56.102
+Nmap scan report for 192.168.56.102
+Host is up (0.0033s latency).
+
+PORT      STATE SERVICE
+22/tcp    open  ssh
+80/tcp    open  http
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=192.168.56.102
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://192.168.56.102:80/
+|     Form id: 
+|     Form action: https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01
+|     
+|     Path: http://192.168.56.102:80/wordpress/
+|     Form id: search-form-6aaa3a0b3a27c
+|     Form action: http://raven.local/wordpress/
+|     
+|     Path: http://192.168.56.102:80/team.html
+|     Form id: 
+|     Form action: https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01
+|     
+|     Path: http://192.168.56.102:80/service.html
+|     Form id: 
+|     Form action: https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01
+|     
+|     Path: http://192.168.56.102:80/index.html
+|     Form id: 
+|_    Form action: https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-enum: 
+|   /wordpress/: Blog
+|   /wordpress/wp-login.php: Wordpress login page.
+|   /css/: Potentially interesting directory w/ listing on 'apache/2.4.10 (debian)'
+|   /img/: Potentially interesting directory w/ listing on 'apache/2.4.10 (debian)'
+|   /js/: Potentially interesting directory w/ listing on 'apache/2.4.10 (debian)'
+|   /manual/: Potentially interesting folder
+|_  /vendor/: Potentially interesting directory w/ listing on 'apache/2.4.10 (debian)'
+111/tcp   open  rpcbind
+56816/tcp open  unknown
+MAC Address: 08:00:27:47:E1:04 (Oracle VirtualBox virtual NIC)
+
+# Nmap done at Wed Sep 16 02:41:38 2026 -- 1 IP address (1 host up) scanned in 34.56 seconds

@@ -1,0 +1,16 @@
+# Nmap 7.99 scan initiated Wed Sep 16 01:56:41 2026 as: /usr/lib/nmap/nmap -sU --top-ports 100 -oN /home/kali/udp_top100.txt 192.168.56.100 192.168.56.102
+Nmap scan report for 192.168.56.100
+Host is up (0.00089s latency).
+Not shown: 99 closed udp ports (port-unreach)
+PORT   STATE         SERVICE
+67/udp open|filtered dhcps
+MAC Address: 08:00:27:CD:30:4B (Oracle VirtualBox virtual NIC)
+
+Nmap scan report for 192.168.56.102
+Host is up (0.0035s latency).
+Not shown: 50 open|filtered udp ports (no-response), 49 closed udp ports (port-unreach)
+PORT    STATE SERVICE
+111/udp open  rpcbind
+MAC Address: 08:00:27:47:E1:04 (Oracle VirtualBox virtual NIC)
+
+# Nmap done at Wed Sep 16 01:57:28 2026 -- 2 IP addresses (2 hosts up) scanned in 47.95 seconds
